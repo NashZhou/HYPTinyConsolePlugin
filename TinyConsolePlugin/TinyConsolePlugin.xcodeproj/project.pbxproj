@@ -23,7 +23,9 @@
 		7A7D7CB6204AE90E007F9620 /* TinyConsoleController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A7D7CAE204AE90D007F9620 /* TinyConsoleController.m */; };
 		7A7D7CB7204AE90E007F9620 /* TinyConsoleViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 7A7D7CAF204AE90D007F9620 /* TinyConsoleViewController.h */; };
 		7A7D7CB8204AE90E007F9620 /* UIView+Attach.h in Headers */ = {isa = PBXBuildFile; fileRef = 7A7D7CB0204AE90E007F9620 /* UIView+Attach.h */; };
-		7A7D7CBA204AE951007F9620 /* HyperionCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A7D7CB9204AE951007F9620 /* HyperionCore.framework */; };
+		7AAC7FF0204B20370052CAF2 /* HyperionCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AAC7FEF204B20370052CAF2 /* HyperionCore.framework */; };
+		7AAC7FF8204B755E0052CAF2 /* UIWindow+TinyConsoleSwizzle.h in Headers */ = {isa = PBXBuildFile; fileRef = 7AAC7FF6204B755E0052CAF2 /* UIWindow+TinyConsoleSwizzle.h */; };
+		7AAC7FF9204B755E0052CAF2 /* UIWindow+TinyConsoleSwizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AAC7FF7204B755E0052CAF2 /* UIWindow+TinyConsoleSwizzle.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,7 +47,9 @@
 		7A7D7CAE204AE90D007F9620 /* TinyConsoleController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TinyConsoleController.m; sourceTree = "<group>"; };
 		7A7D7CAF204AE90D007F9620 /* TinyConsoleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TinyConsoleViewController.h; sourceTree = "<group>"; };
 		7A7D7CB0204AE90E007F9620 /* UIView+Attach.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Attach.h"; sourceTree = "<group>"; };
-		7A7D7CB9204AE951007F9620 /* HyperionCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = HyperionCore.framework; sourceTree = "<group>"; };
+		7AAC7FEF204B20370052CAF2 /* HyperionCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = HyperionCore.framework; sourceTree = "<group>"; };
+		7AAC7FF6204B755E0052CAF2 /* UIWindow+TinyConsoleSwizzle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWindow+TinyConsoleSwizzle.h"; sourceTree = "<group>"; };
+		7AAC7FF7204B755E0052CAF2 /* UIWindow+TinyConsoleSwizzle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWindow+TinyConsoleSwizzle.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,7 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7A7D7CBA204AE951007F9620 /* HyperionCore.framework in Frameworks */,
+				7AAC7FF0204B20370052CAF2 /* HyperionCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +67,7 @@
 		7A7D7C83204AE8C3007F9620 = {
 			isa = PBXGroup;
 			children = (
+				7AAC7FEF204B20370052CAF2 /* HyperionCore.framework */,
 				7A7D7C8F204AE8C3007F9620 /* TinyConsolePlugin */,
 				7A7D7C8E204AE8C3007F9620 /* Products */,
 			);
@@ -79,7 +84,7 @@
 		7A7D7C8F204AE8C3007F9620 /* TinyConsolePlugin */ = {
 			isa = PBXGroup;
 			children = (
-				7A7D7CB9204AE951007F9620 /* HyperionCore.framework */,
+				7AAC7FF5204B752A0052CAF2 /* Category */,
 				7A7D7C98204AE8CF007F9620 /* TinyConsolePlugin */,
 				7A7D7C90204AE8C3007F9620 /* TinyConsolePlugin.h */,
 				7A7D7C91204AE8C3007F9620 /* Info.plist */,
@@ -125,6 +130,15 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		7AAC7FF5204B752A0052CAF2 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				7AAC7FF6204B755E0052CAF2 /* UIWindow+TinyConsoleSwizzle.h */,
+				7AAC7FF7204B755E0052CAF2 /* UIWindow+TinyConsoleSwizzle.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -135,6 +149,7 @@
 				7A7D7CB4204AE90E007F9620 /* TinyConsoleController.h in Headers */,
 				7A7D7CB8204AE90E007F9620 /* UIView+Attach.h in Headers */,
 				7A7D7CB5204AE90E007F9620 /* TinyConsole.h in Headers */,
+				7AAC7FF8204B755E0052CAF2 /* UIWindow+TinyConsoleSwizzle.h in Headers */,
 				7A7D7C92204AE8C3007F9620 /* TinyConsolePlugin.h in Headers */,
 				7A7D7CB7204AE90E007F9620 /* TinyConsoleViewController.h in Headers */,
 				7A7D7C9F204AE8FA007F9620 /* HYPTinyConsolePlugin.h in Headers */,
@@ -217,6 +232,7 @@
 				7A7D7CB6204AE90E007F9620 /* TinyConsoleController.m in Sources */,
 				7A7D7CB1204AE90E007F9620 /* UIView+Attach.m in Sources */,
 				7A7D7CA2204AE8FA007F9620 /* HYPTinyConsolePlugin.m in Sources */,
+				7AAC7FF9204B755E0052CAF2 /* UIWindow+TinyConsoleSwizzle.m in Sources */,
 				7A7D7CA1204AE8FA007F9620 /* HYPTinyConsolePluginModule.m in Sources */,
 				7A7D7CB2204AE90E007F9620 /* TinyConsole.m in Sources */,
 			);
@@ -338,6 +354,7 @@
 		7A7D7C96204AE8C3007F9620 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -348,20 +365,25 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/TinyConsolePlugin",
+					"$(PROJECT_DIR)",
 				);
+				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = TinyConsolePlugin/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = nashzhou.TinyConsolePlugin;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Debug;
 		};
 		7A7D7C97204AE8C3007F9620 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -372,14 +394,18 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/TinyConsolePlugin",
+					"$(PROJECT_DIR)",
 				);
+				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = TinyConsolePlugin/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = nashzhou.TinyConsolePlugin;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Release;
 		};

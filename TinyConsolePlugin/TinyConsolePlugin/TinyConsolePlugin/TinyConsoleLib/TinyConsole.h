@@ -27,4 +27,6 @@
 +(void)addGestureRecognizer:(UIGestureRecognizer *)gestureRecognizer;
 +(void)removeGestureRecognizer:(UIGestureRecognizer *)gestureRecognizer;
 
++(void)toggleConsole;
+
 @end

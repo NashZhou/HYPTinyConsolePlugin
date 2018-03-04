@@ -166,4 +166,12 @@ static TinyConsole *instance = nil;
     [[[TinyConsole shared]consoleController].consoleViewController.view removeGestureRecognizer:gestureRecognizer];
 }
 
++(void)toggleConsole
+{
+    if ([[TinyConsole shared]consoleController])
+    {
+        [[[TinyConsole shared]consoleController]toggleConsole];
+    }
+}
+
 @end

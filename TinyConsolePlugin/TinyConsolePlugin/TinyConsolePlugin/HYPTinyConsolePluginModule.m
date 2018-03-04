@@ -1,5 +1,6 @@
 #import "HYPTinyConsolePluginModule.h"
-#import "HYPPluginMenuItem.h"
+#import <HyperionCore/HYPPluginMenuItem.h>
+#import "TinyConsole.h"
 
 @interface HYPTinyConsolePluginModule () <HYPPluginMenuItemDelegate>
 
@@ -26,7 +27,7 @@
 
 -(void)pluginMenuItemSelected:(UIView<HYPPluginMenuItem> *)pluginView
 {
-    
+    [TinyConsole toggleConsole];
 }
 
 @end

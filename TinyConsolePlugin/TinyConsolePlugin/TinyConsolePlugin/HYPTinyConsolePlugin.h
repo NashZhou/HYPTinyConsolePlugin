@@ -1,5 +1,5 @@
 #import <Foundation/Foundation.h>
-#import "HYPPlugin.h"
+#import <HyperionCore/HYPPlugin.h>
 
 @interface HYPTinyConsolePlugin : NSObject<HYPPlugin>
 
