@@ -18,10 +18,10 @@
 		7A7D7CB1204AE90E007F9620 /* UIView+Attach.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A7D7CA9204AE90D007F9620 /* UIView+Attach.m */; };
 		7A7D7CB2204AE90E007F9620 /* TinyConsole.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A7D7CAA204AE90D007F9620 /* TinyConsole.m */; };
 		7A7D7CB3204AE90E007F9620 /* TinyConsoleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A7D7CAB204AE90D007F9620 /* TinyConsoleViewController.m */; };
-		7A7D7CB4204AE90E007F9620 /* TinyConsoleController.h in Headers */ = {isa = PBXBuildFile; fileRef = 7A7D7CAC204AE90D007F9620 /* TinyConsoleController.h */; };
-		7A7D7CB5204AE90E007F9620 /* TinyConsole.h in Headers */ = {isa = PBXBuildFile; fileRef = 7A7D7CAD204AE90D007F9620 /* TinyConsole.h */; };
+		7A7D7CB4204AE90E007F9620 /* TinyConsoleController.h in Headers */ = {isa = PBXBuildFile; fileRef = 7A7D7CAC204AE90D007F9620 /* TinyConsoleController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7A7D7CB5204AE90E007F9620 /* TinyConsole.h in Headers */ = {isa = PBXBuildFile; fileRef = 7A7D7CAD204AE90D007F9620 /* TinyConsole.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7A7D7CB6204AE90E007F9620 /* TinyConsoleController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A7D7CAE204AE90D007F9620 /* TinyConsoleController.m */; };
-		7A7D7CB7204AE90E007F9620 /* TinyConsoleViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 7A7D7CAF204AE90D007F9620 /* TinyConsoleViewController.h */; };
+		7A7D7CB7204AE90E007F9620 /* TinyConsoleViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 7A7D7CAF204AE90D007F9620 /* TinyConsoleViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7A7D7CB8204AE90E007F9620 /* UIView+Attach.h in Headers */ = {isa = PBXBuildFile; fileRef = 7A7D7CB0204AE90E007F9620 /* UIView+Attach.h */; };
 		7AAC7FF0204B20370052CAF2 /* HyperionCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AAC7FEF204B20370052CAF2 /* HyperionCore.framework */; };
 		7AAC7FF8204B755E0052CAF2 /* UIWindow+TinyConsoleSwizzle.h in Headers */ = {isa = PBXBuildFile; fileRef = 7AAC7FF6204B755E0052CAF2 /* UIWindow+TinyConsoleSwizzle.h */; };
@@ -146,12 +146,12 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A7D7CB7204AE90E007F9620 /* TinyConsoleViewController.h in Headers */,
 				7A7D7CB4204AE90E007F9620 /* TinyConsoleController.h in Headers */,
-				7A7D7CB8204AE90E007F9620 /* UIView+Attach.h in Headers */,
 				7A7D7CB5204AE90E007F9620 /* TinyConsole.h in Headers */,
+				7A7D7CB8204AE90E007F9620 /* UIView+Attach.h in Headers */,
 				7AAC7FF8204B755E0052CAF2 /* UIWindow+TinyConsoleSwizzle.h in Headers */,
 				7A7D7C92204AE8C3007F9620 /* TinyConsolePlugin.h in Headers */,
-				7A7D7CB7204AE90E007F9620 /* TinyConsoleViewController.h in Headers */,
 				7A7D7C9F204AE8FA007F9620 /* HYPTinyConsolePlugin.h in Headers */,
 				7A7D7CA0204AE8FA007F9620 /* HYPTinyConsolePluginModule.h in Headers */,
 			);
@@ -290,7 +290,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -342,7 +342,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -355,6 +355,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = (
+					"$(ARCHS_STANDARD)",
+					x86_64,
+					i386,
+					arm64,
+					armv7,
+				);
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -370,8 +377,10 @@
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = TinyConsolePlugin/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "";
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = nashzhou.TinyConsolePlugin;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -384,6 +393,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = (
+					"$(ARCHS_STANDARD)",
+					x86_64,
+					i386,
+					arm64,
+					armv7,
+				);
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -399,6 +415,7 @@
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = TinyConsolePlugin/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = nashzhou.TinyConsolePlugin;

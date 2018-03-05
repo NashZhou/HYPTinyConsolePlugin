@@ -36,7 +36,28 @@
 
 -(void)xxx_setRootViewController:(UIViewController *)rootViewController
 {
-    [self xxx_setRootViewController:[TinyConsole createViewController:rootViewController includingDefault:NO]];
+    // TinyConsole should only attach to the rootViewController the second time this function is called
+    // (This isn't the most efficient way to detect if setRootViewController has been called twice)
+    if ([[TinyConsole shared]guarded])
+    {
+        [self xxx_setRootViewController:rootViewController];
+    }
+    else if (![[TinyConsole shared]assigned])
+    {
+        [self xxx_setRootViewController:rootViewController];
+        [[TinyConsole shared]setAssigned:YES];
+    }
+    else
+    {
+        [self xxx_setRootViewController:[TinyConsole createViewController:rootViewController includingDefault:NO]];
+        [TinyConsole printText:@"Welcome to TinyConsole"];
+        [TinyConsole addMarker];
+        [TinyConsole printText:@"NOW" withColor:[UIColor redColor]];
+        [TinyConsole printText:@"IN" withColor:[UIColor greenColor]];
+        [TinyConsole printText:@"COLOR" withColor:[UIColor blueColor]];
+        [TinyConsole addMarker];
+        [[TinyConsole shared]setGuarded:YES];
+    }
 }
 
 @end
