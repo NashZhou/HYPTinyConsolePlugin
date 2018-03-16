@@ -1,7 +1,9 @@
 # HYPTinyConsolePlugin
 This is a conversion of Cosmo's [TinyConsole library](https://github.com/Cosmo/TinyConsole) into a [Hyperion](https://github.com/willowtreeapps/Hyperion-iOS) library
 
+<p align="center" id="Tiny Console Gif">
 ![tiny console gif](gif/tiny-console.gif)
+</p>
 
 ### Implementation & Notes
 * Add the TinyConsolePlugin.framework file in your iOS project manually by following Hyperion's manual tutorial
