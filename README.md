@@ -2,7 +2,7 @@
 This is a conversion of Cosmo's [TinyConsole library](https://github.com/Cosmo/TinyConsole) into a [Hyperion](https://github.com/willowtreeapps/Hyperion-iOS) library
 
 <p align="center" id="Tiny Console Gif">
-![tiny console gif](gif/tiny-console.gif)
+    <img src="https://raw.githubusercontent.com/NashZhou/HYPTinyConsolePlugin/master/gif/tiny-console.gif"/>
 </p>
 
 ### Implementation & Notes
