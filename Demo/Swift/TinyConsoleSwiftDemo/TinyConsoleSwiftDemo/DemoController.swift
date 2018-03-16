@@ -11,27 +11,29 @@ import UIKit
 
 import TinyConsolePlugin.TinyConsole
 
-class DemoController: UIViewController {
+class DemoController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.view.backgroundColor = UIColor.white
-        
-        let btn = UIButton(type: .system)
-        btn.setTitle("Click me", for: .normal)
-        btn.translatesAutoresizingMaskIntoConstraints = false
-        btn.addTarget(self, action: #selector(btnPressed(sender:)), for: .touchUpInside)
-        
-        self.view.addSubview(btn)
-        
-        NSLayoutConstraint.activate([
-            btn.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
-            btn.centerYAnchor.constraint(equalTo: self.view.centerYAnchor),
-            btn.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor),
-            btn.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor)])
+        self.title = "Demo"
+        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
     }
     
-    @objc func btnPressed(sender: UIButton!) {
-        TinyConsole.printText("Hello Console")
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
     }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 30
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        cell.textLabel?.text = "Row \(indexPath.row)"
+        return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        TinyConsole.printText("Tapped on \(indexPath.row)")
+    }
+    
 }

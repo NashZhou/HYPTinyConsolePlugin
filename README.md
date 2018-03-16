@@ -1,9 +1,14 @@
 # HYPTinyConsolePlugin
-This is a conversion of Cosmo's [TinyConsole library](https://github.com/Cosmo/TinyConsole) into a Hyperion library
+This is a conversion of Cosmo's [TinyConsole library](https://github.com/Cosmo/TinyConsole) into a [Hyperion](https://github.com/willowtreeapps/Hyperion-iOS) library
 
-### Implementation
+![tiny console gif](gif/tiny-console.gif)
+
+### Implementation & Notes
+* Add the TinyConsolePlugin.framework file in your iOS project manually by following Hyperion's manual tutorial
+* While the first-party plugins require no code implementation, you must call to the TinyConsole via Objective C or Swift
 * [TinyConsole doesn't support Storyboards](https://github.com/Cosmo/TinyConsole/issues/29)
 
+### Accessing the TinyConsole API
 **Objective C**
 
 * Install the framework like any other Hyperion plugin

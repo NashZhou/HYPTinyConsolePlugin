@@ -17,28 +17,31 @@
 -(void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    self.view.backgroundColor = [UIColor whiteColor];
-    
-    // Adding a button to the screen
-    UIButton *btn = [UIButton buttonWithType:UIButtonTypeSystem];
-    [btn setTitle:@"Click me" forState:UIControlStateNormal];
-    btn.translatesAutoresizingMaskIntoConstraints = NO;
-    [btn addTarget:self action:@selector(btnPressed:) forControlEvents:UIControlEventTouchUpInside];
-    
-    [self.view addSubview:btn];
-    
-    [NSLayoutConstraint activateConstraints:@[[btn.centerXAnchor constraintEqualToAnchor:self.view.centerXAnchor],
-        [btn.centerYAnchor constraintEqualToAnchor:self.view.centerYAnchor],
-        [btn.leadingAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.leadingAnchor],
-        [btn.trailingAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.trailingAnchor]]];
+    self.title = @"Demo";
+    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
 }
 
--(void)btnPressed:(UIButton *)sender
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    // Print to the console
+    return 1;
+}
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 30;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath;
+{
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+    cell.textLabel.text = [NSString stringWithFormat:@"Row %ld", (long)indexPath.row];
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
 #if DEBUG
-    [TinyConsole printText:@"Hello Console"];
+    [TinyConsole printText:[NSString stringWithFormat:@"Tapped on %ld", (long)indexPath.row]];
 #endif
 }
 

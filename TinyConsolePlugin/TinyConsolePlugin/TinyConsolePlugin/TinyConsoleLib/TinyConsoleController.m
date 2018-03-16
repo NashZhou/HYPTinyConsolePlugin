@@ -22,7 +22,6 @@
 {
     if (self = [super init])
     {
-        _rootViewController = [UIViewController new];
         _consoleViewController = [TinyConsoleViewController new];
         _consoleFrameHeight = 120;
         _expandedHeight = 140;

@@ -1,6 +1,0 @@
-framework module TinyConsolePlugin {
-  umbrella header "TinyConsolePlugin.h"
-
-  export *
-  module * { export * }
-}

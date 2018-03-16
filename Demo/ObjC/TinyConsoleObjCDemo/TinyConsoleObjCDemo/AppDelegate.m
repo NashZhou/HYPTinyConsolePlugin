@@ -20,9 +20,7 @@
     // Override point for customization after application launch.
     
     _window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
-    
-    _window.rootViewController = [DemoController new];
-    
+    _window.rootViewController = [[UINavigationController alloc]initWithRootViewController:[DemoController new]];
     [_window makeKeyAndVisible];
     
     return YES;

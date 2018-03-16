@@ -14,7 +14,7 @@ typedef enum TCWindowMode : NSUInteger
 
 @property (nonatomic, strong) TinyConsoleViewController *consoleViewController;
 @property (nonatomic, strong) NSLayoutConstraint *consoleViewHeightConstraint;
-@property (nonatomic, strong) UIViewController *rootViewController;
+@property (nonatomic, weak) UIViewController *rootViewController;
 
 -(BOOL)isExpanded;
 -(void)toggleConsole;
