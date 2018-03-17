@@ -11,18 +11,16 @@ Use Cosmo's [TinyConsole library](https://github.com/Cosmo/TinyConsole) along wi
 * [TinyConsole doesn't support Storyboards](https://github.com/Cosmo/TinyConsole/issues/29)
 
 ### Accessing TinyConsole
-###### Objective C
+##### Objective C
 
 * Install the framework like any other Hyperion plugin and add the following header to your view controllers
 
 ``` objc
 #import <TinyConsolePlugin/TinyConsole.h>
 ```
+* Call `[TinyConsole printText:@""];` to print to the console
 
-
-and call `[TinyConsole printText:@""];` to print to the console
-
-###### Swift
+##### Swift
 
 * Install the framework like any other Hyperion plugin
 * Create a bridging header file and import TinyConsole using the Objective C import statement
@@ -32,7 +30,7 @@ import TinyConsolePlugin.TinyConsole
 ```
 * Call `TinyConsole.printText("")` to print to the console
 
-###### C#
+##### C#
 
 * Right click your project and add the framework as a native reference along with HyperionCore
 * Include the TinyConsolePlugin dll file as a reference to your project
