@@ -11,29 +11,47 @@ Use Cosmo's [TinyConsole library](https://github.com/Cosmo/TinyConsole) along wi
 * [TinyConsole doesn't support Storyboards](https://github.com/Cosmo/TinyConsole/issues/29)
 
 ### Accessing TinyConsole
-##### Objective C
+#### Objective C
 
-* Install the framework like any other Hyperion plugin and add the following header to your view controllers
-
+* Install the framework like any other Hyperion plugin
+* Override the application launch window in `AppDelegate.m`
+``` objc
+_window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
+_window.rootViewController = [UIViewController new];
+[_window makeKeyAndVisible];
+```
+* Add the following header to your view controllers
 ``` objc
 #import <TinyConsolePlugin/TinyConsole.h>
 ```
 * Call `[TinyConsole printText:@""];` to print to the console
 
-##### Swift
+#### Swift
 
 * Install the framework like any other Hyperion plugin
 * Create a bridging header file and import TinyConsole using the Objective C import statement
+* Override the application launch window in `AppDelegate.swift`
+``` swift
+window = UIWindow(frame: UIScreen.main.bounds)
+window?.rootViewController = UIViewController()
+window?.makeKeyAndVisible()
+```
 * Add the following header to your view controllers
 ``` swift
 import TinyConsolePlugin.TinyConsole
 ```
 * Call `TinyConsole.printText("")` to print to the console
 
-##### C#
+#### C#
 
-* Right click your project and add the framework as a native reference along with HyperionCore
-* Include the TinyConsolePlugin dll file as a reference to your project
+* Right click your project and add TinyConsolePlugin.framework as a native reference along with HyperionCore.framework
+* Add the TinyConsolePlugin Nuget Package [here](https://www.nuget.org/packages/TinyConsolePlugin/1.0.0) or include the TinyConsolePlugin dll file as a reference to your project
+* Override the application launch window in `AppDelegate.cs`
+``` cs
+Window = new UIWindow(UIScreen.MainScreen.Bounds);
+Window.RootViewController = new UIViewController();
+Window.MakeKeyAndVisible();
+```
 * Add the following namespace to your view controllers
 ``` cs
 using TinyConsolePlugin;

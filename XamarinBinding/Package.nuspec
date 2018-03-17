@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>TinyConsolePlugin</id>
+    <version>1.0.0</version>
+    <authors>Nash Zhou</authors>
+    <owners>Nash Zhou</owners>
+    <licenseUrl>https://github.com/NashZhou/HYPTinyConsolePlugin/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/NashZhou/HYPTinyConsolePlugin</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>A combination of Cosmo's TinyConsole library and a Hyperion iOS plugin</description>
+    <releaseNotes>This library needs to be integrated along with the Hyperion Core framework and the TinyConsolePlugin framework</releaseNotes>
+    <copyright>Copyright 2018</copyright>
+    <tags>xamarin, xamarin-ios, Xamarin.iOS, tiny-console, TinyConsole</tags>
+  </metadata>
+  <files>
+    <file src="lib/Xamarin.iOS10/TinyConsolePlugin.dll" target="lib/Xamarin.iOS10/TinyConsolePlugin.dll"/>
+  </files>
+</package>
