@@ -1,6 +1,6 @@
 #import "HYPTinyConsolePluginModule.h"
-#import <HyperionCore/HYPPluginMenuItem.h>
-#import <HyperionCore/HyperionManager.h>
+#import <HyperioniOS/HYPPluginMenuItem.h>
+#import <HyperioniOS/HyperionManager.h>
 #import "TinyConsole.h"
 
 @interface HYPTinyConsolePluginModule () <HYPPluginMenuItemDelegate>

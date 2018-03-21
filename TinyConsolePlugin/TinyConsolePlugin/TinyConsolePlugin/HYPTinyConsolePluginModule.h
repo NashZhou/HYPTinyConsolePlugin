@@ -1,6 +1,6 @@
 #import <Foundation/Foundation.h>
-#import <HyperionCore/HYPPluginModule.h>
-#import <HyperionCore/HYPPluginExtension.h>
+#import <HyperioniOS/HYPPluginModule.h>
+#import <HyperioniOS/HYPPluginExtension.h>
 
 @interface HYPTinyConsolePluginModule : HYPPluginModule
 
